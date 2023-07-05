@@ -6,11 +6,15 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 import App from "./App.tsx";
 import HomePage from "./pages/HomePage.tsx";
 import ProductPage from "./pages/ProductPage.tsx";
-import "./index.css";
+
+axios.defaults.baseURL =
+  process.env.NODE_ENV === "development" ? "http://localhost:4000" : "/";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
