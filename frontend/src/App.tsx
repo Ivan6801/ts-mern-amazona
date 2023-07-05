@@ -1,5 +1,4 @@
-import { sampleProducts } from "./data";
-import { Container, Row, Col, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 import "./App.css";
 
