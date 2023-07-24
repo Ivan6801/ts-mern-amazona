@@ -13,8 +13,10 @@ import { Badge, Button, Card, Col, ListGroup, Row } from "react-bootstrap";
 export default function ProductPage() {
   const params = useParams();
   const { slug } = params;
+
   const {
     data: product,
+    refetch,
     isLoading,
     error,
   } = useGetProductDetailsBySlugQuery(slug!);
@@ -74,6 +76,7 @@ export default function ProductPage() {
                     </Col>
                   </Row>
                 </ListGroup.Item>
+
                 {product.countInStock > 0 && (
                   <ListGroup.Item>
                     <div className="d-grid">
