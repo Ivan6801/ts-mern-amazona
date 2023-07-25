@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
+import { StoreContext } from "./Store";
 import "./App.css";
 
 function App() {
+  const { state, dispatch } = useContext(StoreContext);
+
   return (
     <div className="d-flex flex-column vh-100">
       <header>
