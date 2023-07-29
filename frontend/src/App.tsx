@@ -1,11 +1,18 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 import { StoreContext } from "./Store";
 import "./App.css";
 
 function App() {
-  const { state, dispatch } = useContext(StoreContext);
+  const {
+    state: { mode },
+    dispatch,
+  } = useContext(StoreContext);
+
+  useEffect(() => {
+    document.body.setAttribute("data-bs-theme", mode);
+  }, [mode]);
 
   return (
     <div className="d-flex flex-column vh-100">
