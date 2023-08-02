@@ -30,7 +30,12 @@ export default function ProductPage() {
     <div>
       <Row>
         <Col md={6}>
-          <img className="large" src={product.image} alt={product.name}></img>
+          <img
+            style={{ width: "100%" }}
+            className="large"
+            src={product.image}
+            alt={product.name}
+          ></img>
         </Col>
         <Col md={3}>
           <ListGroup variant="flush">
